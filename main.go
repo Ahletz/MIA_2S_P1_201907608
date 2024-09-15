@@ -1,5 +1,14 @@
 package main
 
+import (
+	"MIA_2S_P1_201907608/Tools"
+	"fmt"
+)
+
 func main() {
-	Comando("mkdisk -path=/home/user/Disco2.mia -Unit=K -size=3000")
+
+	cmd := "mkdisk cosas"
+	Tools.Separar_cmd(cmd)
+	fmt.Println("listo")
+
 }
