@@ -1,12 +1,15 @@
 package Tools
 
 import (
+	"MIA_2S_P1_201907608/Mount"
 	"fmt"
 	"strings"
 )
 
 // variables globales
+var lista_montajes *Mount.Lista = Mount.New_lista()
 var salida_comando string = ""
+var graphDot string = ""
 
 // separar comandos de consola
 func Separar_cmd(cmd string) {
@@ -53,19 +56,19 @@ func ejecutar_comando(commandArray []string) {
 	// Identifica el comando
 	if data == "mkdisk" {
 		/* MKDISK */
-		//mkdisk(commandArray)
+		mkdisk(commandArray)
 		fmt.Println("MKDISK")
 	} else if data == "rmdisk" {
 		/* RMDISK */
-		//rmdisk(commandArray)
+		rmdisk(commandArray)
 		fmt.Println("RMDISK")
 	} else if data == "fdisk" {
 		/* FDISK */
-		//fdisk(commandArray)
+		fdisk(commandArray)
 		fmt.Println("FDISK")
 	} else if data == "mount" {
 		/* MOUNT */
-		//mount(commandArray)
+		mount(commandArray)
 		fmt.Println("MOUNT")
 	} else if data == "rep" {
 		/* REP */
