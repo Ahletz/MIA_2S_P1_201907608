@@ -1,0 +1,15 @@
+
+<div class="container">
+    <!-- Cuadro de texto para escribir comandos -->
+    <textarea [(ngModel)]="inputText" placeholder="Escribe tu comando aquí"></textarea>
+  
+    <!-- Botón para enviar el texto al backend -->
+    <button (click)="sendText()">Enviar</button>
+  
+    <!-- Botón para cargar un archivo .txt -->
+    <input type="file" (change)="uploadFile($event)" accept=".txt" />
+  
+    <!-- Cuadro de texto gris para mostrar la respuesta -->
+    <textarea [ngModel]="responseText" readonly style="background-color: lightgrey;"></textarea>
+  </div>
+  

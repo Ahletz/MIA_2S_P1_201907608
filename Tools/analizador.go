@@ -9,10 +9,9 @@ import (
 // variables globales
 var lista_montajes *Mount.Lista = Mount.New_lista()
 var salida_comando string = ""
-var graphDot string = ""
 
 // separar comandos de consola
-func Separar_cmd(cmd string) {
+func Separar_cmd(cmd string) string {
 	linea := strings.Split(cmd, "\n") //separa por cada línea
 
 	for i := 0; i < len(linea); i++ {
@@ -21,6 +20,8 @@ func Separar_cmd(cmd string) {
 			salida_comando += "\\n"
 		}
 	}
+
+	return salida_comando
 }
 
 // Separa los diferentes comando con sus parametros
@@ -47,6 +48,7 @@ func separa_comando(comando string) {
 	if !band_comentario {
 		ejecutar_comando(commandArray)
 	}
+
 }
 
 func ejecutar_comando(commandArray []string) {
